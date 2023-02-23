@@ -1,0 +1,35 @@
+@mixin phone {
+    @media (max-width: 767.8px) {
+        @content;
+    }
+}
+@mixin tab {
+    @media (min-width: 768px) and (max-width: 1023.8px) {
+        @content;
+    }
+}
+@mixin not {
+    @media (max-width: 1379.8px) {
+        @content;
+    }
+}
+@mixin ipad {
+    @media (max-width: 1023.8px) {
+        @content;
+    }
+}
+@mixin mini {
+    @media (max-width: 600px) {
+        @content;
+    }
+}
+@mixin small {
+    @media (max-width: 499px) {
+        @content;
+    }
+}
+@mixin note {
+    @media (max-width: 1299px) {
+        @content;
+    }
+}

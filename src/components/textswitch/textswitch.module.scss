@@ -1,0 +1,70 @@
+@import "../../styles/mixins.scss";
+
+.switch {
+  position: relative;
+  height: 50px;
+  & input {
+    display: none;
+  }
+
+  .text {
+    height: 50px;
+    outline: none;
+    display: flex;
+    min-width: 75px;
+    padding: 0 15px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 4px;
+
+    span {
+      white-space: nowrap;
+      z-index: 50;
+    }
+  }
+  .selectedText {
+    position: absolute;
+    bottom: 4px;
+    left: 5px;
+    width: 129px;
+    z-index: 1;
+    height: 42px;
+    border-radius: 34px;
+    padding: 9px;
+    color: var(--primary-color);
+    text-align: center;
+    content: attr(data-value);
+    background-color: #fff;
+    transition: 0.4s;
+    &[data-isOn="true"] {
+      transition: 0.4s;
+    }
+  }
+}
+
+.slider {
+  position: relative;
+  border-radius: 34px;
+  display: flex;
+  padding: 0 3px;
+  justify-content: space-around;
+  color: var(--system-color);
+  cursor: pointer;
+  background-color: var(--system-color-grey);
+  transition: 0.4s;
+  background-color: rgb(1 65 255 / 30%);
+
+  @include ipad {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include phone {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include mini {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
